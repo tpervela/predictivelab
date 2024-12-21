@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h2 span {
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laptop Price Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" id="manufacturer" name="manufacturer" required>
+
+        <label for="model_name">Model Name:</label>
+        <input type="text" id="model_name" name="model_name" required>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+
+        <label for="screen_size">Screen Size:</label>
+        <input type="text" id="screen_size" name="screen_size" required>
+
+        <label for="screen">Screen:</label>
+        <input type="text" id="screen" name="screen" required>
+
+        <label for="cpu">CPU:</label>
+        <input type="text" id="cpu" name="cpu" required>
+
+        <label for="ram">RAM:</label>
+        <input type="text" id="ram" name="ram" required>
+
+        <label for="_storage">Storage:</label>
+        <input type="text" id="_storage" name="_storage" required>
+
+        <label for="gpu">GPU:</label>
+        <input type="text" id="gpu" name="gpu" required>
+
+        <label for="operating_system">Operating System:</label>
+        <input type="text" id="operating_system" name="operating_system" required>
+
+        <label for="operating_system_version">Operating System Version:</label>
+        <input type="text" id="operating_system_version" name="operating_system_version">
+
+        <label for="weight">Weight (e.g., 1.37kg):</label>
+        <input type="text" id="weight" name="weight" required>
+
+        <button type="submit">Predict</button>
+    </form>
+    
+    <h2>
+        {% if prediction %}
+            <span>{{ prediction }}</span>
+        {% endif %}
+    </h2>
+</body>
+</html>
